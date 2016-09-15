@@ -14,14 +14,16 @@ public class Client {
             Registry registry = LocateRegistry.getRegistry(host, 1099);
             Calculator stub = (Calculator) registry.lookup("Calculator");
             
-            System.out.println("a : ");
+            System.out.println("operator ? ");
+            String operator = br.readLine();
+            System.out.println("a ? ");
             int a = Integer.parseInt(br.readLine());
-            System.out.println("b : ");
+            System.out.println("b ? ");
             int b = Integer.parseInt(br.readLine());
-            int response = stub.add(a, b);
+            int response = stub.op(operator, a, b);
             System.out.println("response: " + response);
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
+            System.err.	println("Client exception: " + e.toString());
             e.printStackTrace();
         }
     }

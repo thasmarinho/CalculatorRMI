@@ -22,6 +22,19 @@ public class Server implements Calculator {
 		else
 			return 0;
 	}
+	public int op(String operator, int a, int b) throws RemoteException {
+		if (operator.equals("+")) 
+			return add(a, b);
+		if (operator.equals("-")) 
+			return sub(a, b);
+		if (operator.equals("*")) 
+			return mul(a, b);
+		if (operator.equals("/")) 
+			return div(a, b);
+		else
+			return 0;
+		
+	}
         
     public static void main(String args[]) {
         

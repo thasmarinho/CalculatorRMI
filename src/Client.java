@@ -10,7 +10,7 @@ public class Client {
 
         String host = (args.length < 1) ? null : args[0];
         try {
-        	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             Registry registry = LocateRegistry.getRegistry(host, 1099); //host, port
             Calculator stub = (Calculator) registry.lookup("Calculator");
 
